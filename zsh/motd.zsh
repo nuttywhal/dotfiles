@@ -3,7 +3,7 @@
 # What city are you in?
 # http://pastebin.com/dbtemx5F
 
-CITY="MESA"
+CITY="SCOTTSDALE"
 
 # Output the MOTD.
 
