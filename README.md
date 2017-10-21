@@ -1,4 +1,4 @@
-Dotfiles are custom configuration files that allow you to configure settings and preferences for your machine. This repository contains my dotfiles that I maintain on my macOS and Arch Linux machines.
+Dotfiles are custom configuration files that allow you to configure settings and preferences for your machine. This repository contains my dotfiles that I maintain on my macOS and Arch Linux machines. Documentation is provided for my dotfiles in the `README.md` files in each subdirectory.
 
 ## Organization
 
@@ -20,3 +20,5 @@ git clone https://github.com/nuttywhal/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 install/bootstrap
 ```
+
+<img width="600" alt="install/bootstrap" src="https://user-images.githubusercontent.com/26120940/31854113-5f6adc48-b649-11e7-936c-a557260f2bab.png">

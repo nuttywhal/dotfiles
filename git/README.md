@@ -1,0 +1,1 @@
+Basic `git` configuration that contains the usual: *name* and *email address*. I sign all of my commits using my GPG key to assert my identity. See [Git Horror Story](https://mikegerwitz.com/papers/git-horror-story). You may want to change this configuration file before installing these dotfiles so that you don't end up committing under my name.

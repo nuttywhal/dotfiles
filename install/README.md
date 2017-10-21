@@ -1,0 +1,1 @@
+`bootstrap` is the installer script for all of the dotfiles. It symlinks all of the files ending in `.symlink` to the `$HOME` directory, and invokes all of the `install.sh` scripts in the other subdirectories of this repository. `utils.sh` is a file that can be sourced into `install.sh` scripts to provide facilities for logging and interactive symlinking.
