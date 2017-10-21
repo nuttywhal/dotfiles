@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")/.."
+DOTFILES_ROOT=$(pwd -P)
+
+source "$DOTFILES_ROOT/install/utils.sh"
+
+echo -e ''
+echo -e "  \033[1;34m╔══════════════════════╗\033[0m"
+echo -e "  \033[7;34m  nuttywhal's dotfiles  \033[0m"
+echo -e "  \033[1;34m╚══════════════════════╝\033[0m"
+echo -e ''
+
+symlink_dotfiles() {
+	star "Symlinking dotfiles ending in *.symlink"
+	local overwrite_all=false backup_all=false skip_all=false
+
+	# Symlink the root of this repository to $HOME/.dotfiles if the path
+	# to this repository is not already located there. This is required for
+	# for setting up zsh. See zsh/zshrc.symlink.
+
+	if [ "$DOTFILES_ROOT" != "$HOME/.dotfiles" ]
+	then
+		link_file "$DOTFILES_ROOT" "$HOME/.dotfiles"
+	fi
+
+	# Find any files ending in *.symlink and symlink them into $HOME.
+	# Everything is configured and tweaked from within the dotfiles repo.
+
+	for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+	do
+		dst="$HOME/.$(basename "${src%.*}")"
+		link_file "$src" "$dst"
+	done
+}
+
+symlink_dotfiles
+echo ''
+
+# Find all of the install.sh scripts and execute them iteratively.
+# To avoid the installation scripts from being loaded into the
+# environment automatically, make sure that the script file extensions
+# are .sh, not .zsh.
+
+installers=$(find . -name install.sh)
+for installer in $installers
+do
+	sh -c "${installer}"
+	echo ''
+done

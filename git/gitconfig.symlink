@@ -1,0 +1,10 @@
+[user]
+	name = Nelson Tran
+	email = nutty@ntt.io
+	signingkey = EFE0C0DA
+
+[core]
+	editor = vim
+
+[commit]
+	gpgsign = true

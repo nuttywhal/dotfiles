@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# 0 for Fahrenheit
+# 1 for Celsius
+
+METRIC=0
+
+# Default City Weather Code
+# http://pastebin.com/dbtemx5F
+
+LOCCOD="SCOTTSDALE"
+
+# Get the City Weather Code via command line argument.
+# Use the default code if no argument is passed.
+
+if [ -z $1 ] && [ -x $LOCCOD ]
+then
+	echo "USAGE: $0 [locationcode]"
+	exit 0;
+elif [ ! -z $1 ]
+then
+	LOCCOD=$1
+fi
+
+# See colortest-256-ng-git (AUR) to get output a color palette
+# for the color indexes.
+
+curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=${METRIC}\&locCode\=$LOCCOD -m 1 | sed -n '/Currently:/ s/.*: \(.*\): \([0-9]*\)\([CF]\).*/'"$(tput setaf 61)"'\1 '"$(tput op)"'▪'"$(tput setaf 185)"' \2 °\3/p'

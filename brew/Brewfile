@@ -1,0 +1,11 @@
+cask_args appdir: '/Applications'
+
+brew 'coreutils'
+brew 'gpg'
+brew 'neofetch'
+brew 'node'
+brew 'vim'
+brew 'zsh'
+
+cask 'hyper'
+cask 'visual-studio-code'

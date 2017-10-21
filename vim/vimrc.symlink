@@ -1,0 +1,58 @@
+"  ------------------------------------------------------------------------
+"   Vim Configuration (.vimrc)
+"
+"   I am not a Vim power user.
+"   I just use it as a text editor.
+"  ------------------------------------------------------------------------
+
+let mapleader=" "
+imap fd <Esc>
+
+"  ------------------------------------
+"   1.  VIM-PLUG PLUGINS
+"  ------------------------------------
+
+  " Automatically install vim-plug, a minimalist Vim plugin manager.
+  " Then, install the list of plugins.
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'Yggdroot/indentLine'
+call plug#end()
+
+"  ------------------------------------
+"   2.  WHITESPACE MANAGEMENT
+"  ------------------------------------
+
+  " Tabs for semantic indentation,
+  " Spaces for presentational indentation.
+
+set tabstop=4                          " tabs have a width of four
+set shiftwidth=4                       " auto-indent width
+set noexpandtab                        " tabs FTW!
+
+  " To distinguish between tabs and spaces, hit `SPC t w` to toggle
+  " the visibility of the whitespace character indicators.
+
+nmap <leader>tw :set list! <CR>
+set listchars=tab:»\ ,space:·
+
+autocmd BufWritePre * StripWhitespace  " strip trailing whitespace on save
+autocmd FileType make set noexpandtab  " don't expand tabs in Makefiles
+
+"  ------------------------------------
+"   3.  COPY & PASTE BETWEEN VIMs
+"  ------------------------------------
+
+  " Copy and paste between Vim instances via shared a text file buffer.
+  " Source: http://stackoverflow.com/a/11052783
+
+vmap <C-c> :w! ~/.vimbuffer<CR>
+nmap <C-c> :.w! ~/.vimbuffer<CR>
+map <C-p> :r ~/.vimbuffer<CR>

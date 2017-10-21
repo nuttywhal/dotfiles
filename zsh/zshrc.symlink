@@ -1,0 +1,54 @@
+#  ------------------------------------------------------------------------
+#   All of the zsh files in this dotfiles repository will be loaded in
+#   the following order:
+#
+#       1. topic/path.zsh
+#       2. topic/*.zsh (everything else)
+#       3. topic/completion.zsh
+#       4. topic/aliases.zsh
+#  ------------------------------------------------------------------------
+
+# The shortcut to this dotfiles path is $PATH.
+# This directory is where you should have cloned the repo to.
+
+export ZSH=$HOME/.dotfiles
+
+# Get a list of all of the .zsh files in the repo.
+
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
+
+# Load the path files. Any file named `path.zsh` is loaded
+# first and is expected to setup $PATH or similar.
+
+for file in ${(M)config_files:#*/path.zsh}
+do
+	source $file
+done
+
+# Load everything but the path, completion, and alias files.
+
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh:#*/aliases.zsh}
+do
+	source $file
+done
+
+# Initialize autocomplete here, otherwise the functions won't
+# be loaded. Load every completion after autocomplete loads.
+
+autoload -U compinit
+compinit
+
+for file in ${(M)config_files:#*/completion.zsh}
+do
+	source $file
+done
+
+# Load aliases last so that they don't get overridden.
+
+for file in ${(M)config_files:#*/aliases.zsh}
+do
+	source $file
+done
+
+unset config_files
