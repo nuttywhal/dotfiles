@@ -8,7 +8,7 @@ METRIC=0
 # Default City Weather Code
 # http://pastebin.com/dbtemx5F
 
-LOCCOD="SCOTTSDALE"
+LOCCOD=""
 
 # Get the City Weather Code via command line argument.
 # Use the default code if no argument is passed.
