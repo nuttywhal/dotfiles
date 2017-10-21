@@ -8,4 +8,5 @@ brew 'vim'
 brew 'zsh'
 
 cask 'hyper'
+cask 'typora'
 cask 'visual-studio-code'
