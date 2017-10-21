@@ -1,3 +1,5 @@
+# <img width="600" alt="install/bootstrap" src="https://user-images.githubusercontent.com/26120940/31855378-d846d97c-b65e-11e7-887a-0514f871dded.png">
+
 Dotfiles are custom configuration files that allow you to configure settings and preferences for your machine. This repository contains my dotfiles that I maintain on my macOS and Arch Linux machines. Documentation is provided for my dotfiles in the `README.md` files in each subdirectory.
 
 ## Organization
