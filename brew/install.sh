@@ -11,7 +11,7 @@ install_homebrew() {
 
 	# 1. Install Homebrew.
 
-	if [ test == $(which brew) ]
+	if [[ $(test) = $(which brew) ]]
 	then
 		if [ $(uname) = "Darwin" ]
 		then
