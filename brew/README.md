@@ -4,6 +4,8 @@
 
 `coreutils` - Basic file, shell, and text manipulation utilities of the GNU operating system.
 
+`dark-mode` - Toggle macOS dark mode from the command line.
+
 `gpg` - GNU Privacy Guard for public-key cryptography.
 
 `neofetch` - Display system information in the command line.

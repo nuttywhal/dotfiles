@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 brew 'coreutils'
+brew 'dark-mode'
 brew 'gpg'
 brew 'neofetch'
 brew 'node'
