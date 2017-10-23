@@ -6,7 +6,7 @@
 # $1 - message to be appended after the log level
 
 star() {
-	printf "\r \033[1;45m [ ★ ] $1 \033[0m \n"
+	printf "\r \033[1;48m [ ✼ ] $1 \033[0m \n"
 }
 
 info() {
