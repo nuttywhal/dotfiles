@@ -23,4 +23,4 @@ cd ~/.dotfiles
 install/bootstrap
 ```
 
-<img width="600" alt="install/bootstrap" src="https://user-images.githubusercontent.com/26120940/31854113-5f6adc48-b649-11e7-936c-a557260f2bab.png">
+<img width="523" alt="install/bootstrap" src="https://user-images.githubusercontent.com/26120940/32021754-2c7f3dae-b989-11e7-834d-750b25435c21.png">
