@@ -5,6 +5,7 @@ brew 'dark-mode'
 brew 'gpg'
 brew 'neofetch'
 brew 'node'
+brew 'swi-prolog'
 brew 'vim'
 brew 'zsh'
 
