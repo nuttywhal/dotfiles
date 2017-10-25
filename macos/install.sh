@@ -22,7 +22,7 @@ install_macos_settings() {
 		success "Cranking up DAS and ARR settings"
 		defaults write -g ApplePressAndHoldEnabled -bool false
 		defaults write -g InitialKeyRepeat -int 15
-		defaults write -g KeyRepeat -int 1
+		defaults write -g KeyRepeat -int 2
 
 		# Turn on dark mode.
 		success "Turning off the lights (dark mode)"
