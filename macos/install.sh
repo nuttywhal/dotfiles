@@ -18,11 +18,15 @@ install_macos_settings() {
 		defaults write com.apple.dock largesize -float 64
 		killall Dock
 
-		# Set the DAS and ARR values for the keyboard.
+		# Keyboard settings.
 		success "Cranking up DAS and ARR settings"
 		defaults write -g ApplePressAndHoldEnabled -bool false
 		defaults write -g InitialKeyRepeat -int 15
 		defaults write -g KeyRepeat -int 2
+
+		# Mouse settings.
+		success "Disabling mouse acceleration"
+		defaults write .GlobalPreferences com.apple.mouse.scaling -1
 
 		# Turn on dark mode.
 		success "Turning off the lights (dark mode)"
