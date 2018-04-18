@@ -8,15 +8,9 @@
 
 `gpg` - GNU Privacy Guard for public-key cryptography.
 
-`jena` - Java framework for building Semantic Web and Linked Data applications.
-
 `neofetch` - Display system information in the command line.
 
 `node` - Node.js JavaScript runtime environment for server applications.
-
-`python2` - Python 2.x programming language.
-
-`python3` - Python 3.x programming language.
 
 `swi-prolog` - Free implementation of the programming language Prolog.
 
@@ -26,13 +20,7 @@
 
 ---
 
-`eclipse-java` - Java Integrated Development Environment (IDE)
-
-`hyper` - Terminal emulator built using Electron technologies (JS, HTML, CSS).
-
 `java` - Java SE Development Kit.
-
-`protege` - Ontology editor and framework for building intelligent systems.
 
 `the-unarchiver` - A free data decompression utility, the 7-zip for macOS.
 
