@@ -11,7 +11,8 @@ TEXT="\033[3;34mYour wish is my command...\033[0m"
 DATE="\033[1;32m$(date "+%B %d, %Y") \033[0m▪\033[1;31m $(date "+%I:%M %P")"
 WEATHER="$($HOME/.dotfiles/bin/weather $CITY)"
 
-echo -e " \033[1;34m╔════════════════╗\033[0m   $TEXT"
-echo -e " \033[7;34m  nutty@snowshoe  \033[0m   $DATE"
-echo -e " \033[1;34m╚════════════════╝\033[0m   $WEATHER"
+echo
+echo " \033[1;34m╔════════════════╗\033[0m   $TEXT"
+echo " \033[7;34m  nutty@snowshoe  \033[0m   $DATE"
+echo " \033[1;34m╚════════════════╝\033[0m   $WEATHER"
 
